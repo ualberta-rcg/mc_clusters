@@ -1,0 +1,8 @@
+.terraform*
+terraform*
+LICENSE
+beluga-CCInternal-magic-castle-training-openrc.sh
+cloudflare-api.sh
+common/
+dns/
+openstack/

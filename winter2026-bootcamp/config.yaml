@@ -1,0 +1,3 @@
+profile::freeipa::mokey::enable_user_signup: true
+profile::freeipa::mokey::require_verify_admin: false
+#profile::freeipa::base::ipa_domain: winter2026-uofa.c3.ca
