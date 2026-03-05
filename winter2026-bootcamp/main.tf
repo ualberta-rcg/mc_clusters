@@ -11,7 +11,8 @@ module "openstack" {
   source         = "./openstack"
   config_git_url = "https://github.com/Vathsan/puppet-magic_castle.git"
   config_version = "main"
-  subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
+  # Uncomment to create a cluster on the Beluga cloud
+  #subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
 
   cluster_name = "winter2026-uoa"
   domain       = "c3.ca"
@@ -38,10 +39,7 @@ module "openstack" {
     }
   }
 
-  public_keys = [file("~/.ssh/gcloud-general.pub"),
-                 file("./public_keys/dean.pub"),
-                 file("./public_keys/jerry.pub"),
-                 file("./public_keys/cwant-lalochezia.pub")]
+  public_keys = compact(concat(split("\n", file("../keys/sshkeys.pub")), ))
 
   nb_users = 0
   # Shared password, randomly chosen if blank

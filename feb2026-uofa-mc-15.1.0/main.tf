@@ -15,8 +15,8 @@ module "openstack" {
   cluster_name = "feb2026-uofa"
   domain       = "c3.ca"
   image        = "Rocky-9"
-
-subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
+  # Uncomment to create a cluster on the Beluga cloud
+  #subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
 
  instances = {
     mgmt  = { type = "p4-7.5gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
@@ -38,12 +38,7 @@ subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
     }
   }
 
-  public_keys = [file("~/.ssh/id_rsa.pub"),
-                 file("../public_keys/cwant-lalochezia.pub"),
-                 file("../public_keys/cwant-tumbleweed.pub"),
-                 file("../public_keys/dean.pub"),
-                 file("../public_keys/vathsan.pub"),
-                 file("../public_keys/jerry.pub")]
+  public_keys = public_keys = compact(concat(split("\n", file("../keys/sshkeys.pub")), ))
 
   nb_users = 0
   # Shared password, randomly chosen if blank
