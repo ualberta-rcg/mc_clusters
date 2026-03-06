@@ -8,7 +8,7 @@ variable "pool" {
 }
 
 module "openstack" {
-  source         = "./openstack"
+  source         = "git::https://github.com/ComputeCanada/magic_castle.git//openstack?ref=15.1.0"
   config_git_url = "https://github.com/ComputeCanada/puppet-magic_castle.git"
   config_version = "15.1.0"
 
@@ -57,7 +57,7 @@ output "public_ip" {
 
 ## Uncomment to register your domain name with CloudFlare
 module "dns" {
-  source           = "./dns/cloudflare"
+  source           = "git::https://github.com/ComputeCanada/magic_castle.git//dns/cloudflare"
   name             = module.openstack.cluster_name
   domain           = module.openstack.domain
   public_instances = module.openstack.public_instances
@@ -65,7 +65,7 @@ module "dns" {
 
 ## Uncomment to register your domain name with Google Cloud
 # module "dns" {
-#   source           = "./dns/gcloud"
+#   source           = "git::https://github.com/ComputeCanada/magic_castle.git//dns/gcloud"
 #   project          = "your-project-id"
 #   zone_name        = "you-zone-name"
 #   name             = module.openstack.cluster_name
