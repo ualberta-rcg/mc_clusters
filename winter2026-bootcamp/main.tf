@@ -14,14 +14,14 @@ module "openstack" {
   # Uncomment to create a cluster on the Beluga cloud
   #subnet_id = "a7f9fef1-a43e-4502-83a9-e47c936b635d"
 
-  cluster_name = "winter2026-uoa"
+  cluster_name = "winter2026-uofa"
   domain       = "c3.ca"
   image        = "Rocky-9"
 
   instances = {
-    mgmt   = { type = "p4-7.5gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
-    login  = { type = "c8-30gb", tags = ["login", "public", "proxy"], count = 1 }
-    node   = { type = "c8-30gb", tags = ["node"], count = 8 }
+    mgmt   = { type = "p4-6gb-avx2", tags = ["puppet", "mgmt", "nfs"], count = 1 }
+    login  = { type = "c8-30gb-186-avx2", tags = ["login", "public", "proxy"], count = 1 }
+    node   = { type = "c8-30gb-186-avx2", tags = ["node"], count = 1 }
     #gpu-node   = { type = "g1-8gb-c4-22gb", tags = ["node"], count = 4 }
   }
 
