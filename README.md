@@ -19,22 +19,22 @@ Three variable sets are already defined in the organization scope.
 ## Create Openstack variable set
 
 Add the created openstack application credential to the following terraform variables with keys in the  "Environment variable" category and ensuring that the "Sensitive" box is checked:
-OS_APPLICATION_CREDENTIAL_ID : Application credential ID 
-OS_APPLICATION_CREDENTIAL_SECRET : Application credential secret
-OS_AUTH_TYPE which has the value "v3applicationcredential"
+- OS_APPLICATION_CREDENTIAL_ID : Application credential ID 
+- OS_APPLICATION_CREDENTIAL_SECRET : Application credential secret
+- OS_AUTH_TYPE which has the value "v3applicationcredential"
 
 Set the following variables values equal to those defined in the openstack rc file ofthe project. These variables as above, should be in the “Environment variable” category but need not be secret.
-OS_AUTH_URL
-OS_IDENTITY_API_VERSION
-OS_INTERFACE
-OS_REGION_NAME
+- OS_AUTH_URL
+- OS_IDENTITY_API_VERSION
+- OS_INTERFACE
+- OS_REGION_NAME
 
 ## Create cloudflare variable set
 
 Add the created cloudflare API token string to the following terraform variables with keys in the  "Environment variable" category and ensuring that the "Sensitive" box is checked:
-CLOUDFLARE_API_TOKEN
-CLOUDFLARE_DNS_API_TOKEN
-CLOUDFLARE_ZONE_API_TOKEN
+- CLOUDFLARE_API_TOKEN
+- CLOUDFLARE_DNS_API_TOKEN
+- CLOUDFLARE_ZONE_API_TOKEN
 
 # Associate github repo with terraform cloud
 
