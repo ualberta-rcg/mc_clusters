@@ -7,9 +7,9 @@ Directories are named after specific workshops. Each directory contains a Magic 
 
 # Create variable sets
 Variable sets can be assigned one of three scopes to determine which workspaces use the variables they contain. 
-Organization: The variable set applies automatically to all current and future workspaces within the organization.
-Project-specific: The variable set automatically applies to all current and future workspaces within one or more specific projects. 
-Workspace-specific: The variable set applies only to a specific list of selected workspaces. 
+- Organization: The variable set applies automatically to all current and future workspaces within the organization.
+- Project-specific: The variable set automatically applies to all current and future workspaces within one or more specific projects. 
+- Workspace-specific: The variable set applies only to a specific list of selected workspaces. 
 
 Three variable sets are already defined in the organization scope.
 1. Cloudflare
