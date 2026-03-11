@@ -19,9 +19,9 @@ module "openstack" {
   image        = "Rocky-9"
 
   instances = {
-    mgmt   = { type = "p4-6gb-avx2", tags = ["puppet", "mgmt", "nfs"], count = 1 }
-    login  = { type = "c8-30gb-186-avx2", tags = ["login", "public", "proxy"], count = 1 }
-    node   = { type = "c8-30gb-186-avx2", tags = ["node"], count = 1 }
+    mgmt   = { type = "p4-7.5gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
+    login  = { type = "c8-30gb", tags = ["login", "public", "proxy"], count = 1 }
+    node   = { type = "c8-30gb", tags = ["node"], count = 1 }
     #gpu-node   = { type = "g1-8gb-c4-22gb", tags = ["node"], count = 4 }
   }
 
